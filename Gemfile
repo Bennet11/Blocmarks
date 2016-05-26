@@ -10,6 +10,8 @@ source 'https://rubygems.org'
 
  group :development do
   gem 'sqlite3'
+  gem 'pry-rails'
+  gem 'quiet_assets'
  end
 
  gem 'sass-rails', '~> 5.0'
