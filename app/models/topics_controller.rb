@@ -28,10 +28,8 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    @topic.title = params[:topic][:title]
-    @topic.body = params[:topic][:body]
 
-    if @topic.save
+    if @topic.update(topic_params)
       flash[:notice] = "Topic was updated succcessfully"
       redirect_to @topic
     else
