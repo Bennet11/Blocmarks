@@ -23,6 +23,7 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'pry'
  gem 'devise'
+ gem 'shoulda'
 
  group :development, :test do
   gem 'byebug'
