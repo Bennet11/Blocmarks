@@ -11,7 +11,8 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.user = current_user
-    if @bookmark.saved
+
+    if @bookmark.save
       redirect_to [@topic, @bookmark]
       flash[:notice] = "Bookmark was saved successfully."
     else
@@ -46,14 +47,9 @@ class BookmarksController < ApplicationController
       render :show
     end
   end
-end
-
-
-
-
-
   private
 
   def bookmark_params
     params.require(:bookmark).permit(:url)
   end
+end
