@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     root 'topics#index', as: :authenticated_root
   end
 
+  post :incoming, to: 'incoming#create'
+  
   root 'welcome#index'
 end
