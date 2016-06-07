@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
-
-  get 'likes/index'
-
   devise_for :users
 
   resources :users, only: [:show]
@@ -16,10 +12,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:index, :create, :destroy]
   end
 
-  get 'welcome', to: 'welcome#index'
-
-  get 'about', to: 'welcome#about'
-
   authenticated :user do
     root 'topics#index', as: :authenticated_root
   end
@@ -27,4 +19,13 @@ Rails.application.routes.draw do
   post :incoming, to: 'incoming#create'
 
   root 'welcome#index'
+
+  get 'users/show'
+
+  get 'likes/index'
+
+  get 'welcome', to: 'welcome#index'
+
+  get 'about', to: 'welcome#about'
+
 end

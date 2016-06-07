@@ -1,29 +1,29 @@
-<h1 class="text-center"><strong><%= current_user.email %></strong></h1>
+<h1><%=current_user.email %> </h1>
 <br>
 <div class="row">
   <h3>My Blocmarks</h3>
     <div class="col-md-8">
       <% @user_bookmarks.each do |bookmark| %>
-        <h4 class="media-heading">
-          <%="##{bookmark.topic.title}" %>
-          <br>
-          <%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %> <%= link_to "Remove", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
-          <br>
-        </h4>
+          <h4 class="media-heading">
+            <%="##{bookmark.topic.title}" %>
+            <br>
+            <%= link_to bookmark.url, topic_bookmark_path(topic_url, bookmark), :target => '_self' %> <%= link_to "Delete", [bookmark.topic, bookmark], method: :delete, class: 'btn btn-danger' %>
+            <br>
+          </h4>
       <% end %>
     </div>
 </div>
     <br>
 <div class="row">
-  <h3>Like Blockmarks</h3>
+  <h3>Liked Bookmarks:</h3>
     <div class="col-md-8">
       <% @liked_bookmarks.each do |bookmark| %>
         <h4 class="media-heading">
           <%="##{bookmark.topic.title}" %>
           <br>
-          <%= link_to bookmark.url, bookmark.url, :target => '_self' %> <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+          <%= link_to bookmark.url, topic_bookmark_path(topic_url, bookmark), :target => '_self' %> <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
           <br>
         </h4>
-        <% end %>
+      <% end %>
     </div>
-<div>
+</div>
