@@ -1,0 +1,8 @@
+<h1 class="text-center">Topics</h1>
+
+<%= link_to 'New Topic', new_topic_path %>
+<% @topics.each do |topic| %>
+  <div class="topic">
+    <%= link_to topic.title, topic_path(topic) %>
+  </div>
+<% end %>
