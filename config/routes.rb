@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
+  get 'welcome/contact'
+
   get 'likes/index'
 
   get 'welcome', to: 'welcome#index'
