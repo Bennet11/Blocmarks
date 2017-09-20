@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
- gem 'rails', '4.2.5'
+ gem 'rails', '4.2.8'
 
  group :production do
   gem 'pg'
@@ -25,6 +25,7 @@ source 'https://rubygems.org'
  gem 'devise'
  gem 'shoulda'
  gem 'pundit'
+ gem 'json', github: 'flori/json', branch: 'v1.8'
 
  group :development, :test do
   gem 'byebug'
